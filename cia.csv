@@ -1,0 +1,256 @@
+"Country","Continent","Population","Life","GDP","MilitaryExpenditure"
+"Afghanistan","Asia",33609937,44.64,12850000000,244150000
+"Akrotiri","Middle East",15700,"?","?","?"
+"Albania","Europe",3639453,77.96,13520000000,201448000
+"Algeria","Africa",34178188,74.02,171300000000,5652900000
+"American Samoa","Other",65628,73.72,462200000,"?"
+"Andorra","Europe",83888,82.51,"?","?"
+"Angola","Africa",12799293,38.2,95950000000,5469150000
+"Anguilla","Central/South America",14436,80.65,108900000,"?"
+"Antarctica","Other","?","?","?","?"
+"Antigua and Barbuda","Central/South America",85632,74.76,1126000000,"?"
+"Arctic Ocean","Other","?","?","?","?"
+"Argentina","Central/South America",40913584,76.56,338700000000,4403100000
+"Armenia","Asia",2967004,72.68,12070000000,784550000
+"Aruba","Central/South America",103065,75.28,2258000000,"?"
+"Ashmore and Cartier Islands","Asia","?","?","?","?"
+"Australia","Other",21262641,81.63,1069000000000,25656000000
+"Austria","Europe",8210281,79.5,432400000000,3891600000
+"Azerbaijan","Asia",8238672,66.66,53260000000,1384760000
+"Bahamas The","Central/South America",309156,65.78,6935000000,34675000
+"Bahrain","Middle East",727785,75.16,19680000000,885600000
+"Bangladesh","Asia",156050883,60.25,83040000000,1245600000
+"Barbados","Central/South America",284589,73.94,3777000000,18885000
+"Belarus","Europe",9648533,70.63,57680000000,807520000
+"Belgium","Europe",10414336,79.22,495400000000,6440200000
+"Belize","Central/South America",307899,68.2,1383000000,19362000
+"Benin","Africa",8791832,59,6940000000,117980000
+"Bermuda","North America",67837,80.43,"?","?"
+"Bhutan","Asia",691141,66.13,1368000000,13680000
+"Bolivia","Central/South America",9775246,66.89,18940000000,359860000
+"Bosnia and Herzegovina","Europe",4613414,78.5,19360000000,871200000
+"Botswana","Africa",1990876,61.85,13810000000,455730000
+"Bouvet Island","Other","?","?","?","?"
+"Brazil","Central/South America",198739269,71.99,1665000000000,43290000000
+"British Indian Ocean Territory","Asia","?","?","?","?"
+"British Virgin Islands","Central/South America",24491,77.26,839700000,"?"
+"Brunei","Asia",388190,75.74,17180000000,773100000
+"Bulgaria","Europe",7204687,73.09,49430000000,1285180000
+"Burkina Faso","Africa",15746232,52.95,8242000000,98904000
+"Burma","Asia",48137741,63.39,13700000000,287700000
+"Burundi","Africa",8988091,52.09,903000000,53277000
+"Cambodia","Asia",14494293,62.1,10300000000,309000000
+"Cameroon","Africa",18879301,53.69,25000000000,325000000
+"Canada","North America",33487208,81.23,1564000000000,17204000000
+"Cape Verde","Africa",429474,71.61,1845000000,12915000
+"Cayman Islands","Central/South America",49035,80.44,"?","?"
+"Central African Republic","Africa",4511488,44.47,2087000000,22957000
+"Chad","Africa",10329208,47.7,9106000000,382452000
+"Chile","Central/South America",16601707,77.34,181500000000,4900500000
+"China","Asia",1338612968,73.47,4222000000000,181546000000
+"Christmas Island","Asia",1402,"?","?","?"
+"Clipperton Island","Central/South America","?","?","?","?"
+"Cocos (Keeling) Islands","Asia",596,"?","?","?"
+"Colombia","Central/South America",45644023,72.81,249800000000,8493200000
+"Comoros","Africa",752438,63.47,557000000,15596000
+"Congo Democratic Republic of the","Africa",68692542,54.36,12960000000,324000000
+"Congo Republic of the","Africa",4012809,54.15,13350000000,413850000
+"Cook Islands","Other",11870,74.22,183200000,"?"
+"Coral Sea Islands","Other","?","?","?","?"
+"Costa Rica","Central/South America",4253877,77.58,30380000000,121520000
+"Cote d'Ivoire","Africa",20617068,55.45,23780000000,380480000
+"Croatia","Europe",4489409,75.35,63950000000,1528405000
+"Cuba","Central/South America",11451652,77.45,55180000000,2096840000
+"Cyprus","Middle East",796740,78.33,25590000000,972420000
+"Czech Republic","Europe",10211904,76.81,217200000000,3171120000
+"Denmark","Europe",5500510,78.3,369600000000,4804800000
+"Dhekelia","Middle East",15700,"?","?","?"
+"Djibouti","Africa",516055,43.37,973000000,36974000
+"Dominica","Central/South America",72660,75.55,365000000,"?"
+"Dominican Republic","Central/South America",9650054,73.7,45690000000,365520000
+"Ecuador","Central/South America",14573101,75.3,54670000000,1530760000
+"Egypt","Africa",83082869,72.12,158300000000,5382200000
+"El Salvador","Central/South America",7185218,72.33,22280000000,1114000000
+"Equatorial Guinea","Africa",633441,61.61,20160000000,20160000
+"Eritrea","Africa",5647168,61.78,1479000000,93177000
+"Estonia","Europe",1299371,72.82,23460000000,469200000
+"Ethiopia","Africa",85237338,55.41,25080000000,752400000
+"European Union","Europe",491582852,78.67,18850000000000,"?"
+"Falkland Islands (Islas Malvinas)","Central/South America",3140,"?",105100000,"?"
+"Faroe Islands","Europe",48856,79.44,1700000000,"?"
+"Fiji","Other",944720,70.73,3783000000,83226000
+"Finland","Europe",5250275,78.97,281200000000,5624000000
+"France","Europe",64057792,80.98,2978000000000,77428000000
+"French Polynesia","Other",287032,76.71,6100000000,"?"
+"French Southern and Antarctic Lands","Other","?","?","?","?"
+"Gabon","Africa",1514993,53.11,15910000000,540940000
+"Gambia The","Africa",1782893,55.35,779000000,3895000
+"Gaza Strip","Middle East",1551859,73.42,6641000000,"?"
+"Georgia","Asia",4615807,76.72,13280000000,78352000
+"Germany","Europe",82329758,79.26,3818000000000,57270000000
+"Ghana","Africa",23832495,59.85,17720000000,141760000
+"Gibraltar","Europe",28034,80.19,1066000000,"?"
+"Greece","Europe",10737428,79.66,373500000000,16060500000
+"Greenland","Other",57600,70.07,1700000000,"?"
+"Grenada","Central/South America",90739,65.95,657000000,"?"
+"Guam","Other","?","?","?","?"
+"Guatemala","Central/South America",13276517,70.29,36280000000,145120000
+"Guernsey","Europe",65870,80.77,2742000000,"?"
+"Guinea","Africa",10057975,57.09,4454000000,75718000
+"Guinea-Bissau","Africa",1533964,47.9,442000000,13702000
+"Guyana","Central/South America",772298,66.68,1134000000,20412000
+"Haiti","Central/South America",9035536,60.78,6966000000,27864000
+"Heard Island and McDonald Islands","Other","?","?","?","?"
+"Holy See (Vatican City)","Europe",826,"?","?","?"
+"Honduras","Central/South America",7792854,69.4,13780000000,82680000
+"Hong Kong","Asia",7055071,81.86,223800000000,"?"
+"Hungary","Europe",9905596,73.44,131400000000,2299500000
+"Iceland","Other",306694,80.67,19020000000,"?"
+"India","Asia",1166079217,69.89,1237000000000,30925000000
+"Indonesia","Asia",240271522,70.76,510800000000,15324000000
+"Iran","Middle East",66429284,71.14,382300000000,9557500000
+"Iraq","Middle East",28945657,69.94,93800000000,8066800000
+"Ireland","Europe",4203200,78.24,285000000000,2565000000
+"Isle of Man","Europe",76512,78.82,2719000000,"?"
+"Israel","Middle East",7233701,80.73,188700000000,13775100000
+"Italy","Europe",58126212,80.2,2399000000000,43182000000
+"Jamaica","Central/South America",2825928,73.53,13470000000,80820000
+"Jan Mayen","Other","?","?","?","?"
+"Japan","Asia",127078679,82.12,4844000000000,38752000000
+"Jersey","Europe",91626,79.75,5100000000,"?"
+"Jordan","Middle East",6342948,78.87,19120000000,1644320000
+"Kazakhstan","Asia",15399437,67.87,141200000000,1270800000
+"Kenya","Africa",39002772,57.86,31420000000,879760000
+"Kiribati","Other",112850,63.22,71000000,"?"
+"Korea North","Asia",22665345,63.81,26200000000,"?"
+"Korea South","Asia",48508972,78.72,857500000000,23152500000
+"Kosovo","Europe",1804838,"?",3237000000,"?"
+"Kuwait","Middle East",2691158,77.71,159700000000,8464100000
+"Kyrgyzstan","Asia",5431747,69.43,5050000000,70700000
+"Laos","Asia",6834942,56.68,5187000000,25935000
+"Latvia","Europe",2231503,72.15,33900000000,406800000
+"Lebanon","Middle East",4017095,73.66,28020000000,868620000
+"Lesotho","Africa",2130819,40.38,1652000000,42952000
+"Liberia","Africa",3441790,41.84,926000000,12038000
+"Libya","Africa",6310434,77.26,108500000000,4231500000
+"Liechtenstein","Europe",34761,80.06,4993000000,"?"
+"Lithuania","Europe",3555179,74.9,48750000000,585000000
+"Luxembourg","Europe",491775,79.33,57610000000,518490000
+"Macau","Asia",559846,84.36,22040000000,"?"
+"Macedonia","Europe",2066718,74.68,9624000000,577440000
+"Madagascar","Africa",20653556,62.89,9729000000,97290000
+"Malawi","Africa",14268711,43.82,4082000000,53066000
+"Malaysia","Asia",25715819,73.29,214700000000,4358410000
+"Maldives","Asia",396334,73.97,1259000000,69245000
+"Mali","Africa",12666987,50.35,8776000000,166744000
+"Malta","Europe",405165,79.44,8584000000,60088000
+"Marshall Islands","Other",64522,71.19,161700000,"?"
+"Mauritania","Africa",3129486,60.37,3625000000,199375000
+"Mauritius","Africa",1284264,74,8128000000,24384000
+"Mayotte","Africa",223765,62.91,"?","?"
+"Mexico","North America",111211789,76.06,1143000000000,5715000000
+"Micronesia Federated States of","Other",107434,70.94,238100000,"?"
+"Moldova","Europe",4320748,70.8,6197000000,24788000
+"Monaco","Europe",32965,80.09,"?","?"
+"Mongolia","Asia",3041142,67.65,4991000000,69874000
+"Montenegro","Europe",672180,"?",4515000000,"?"
+"Montserrat","Central/South America",5097,72.76,"?","?"
+"Morocco","Africa",34859364,71.8,90470000000,4523500000
+"Mozambique","Africa",21669278,41.18,9788000000,78304000
+"Namibia","Africa",2108665,51.24,7781000000,287897000
+"Nauru","Other",14019,64.2,"?","?"
+"Navassa Island","Central/South America","?","?","?","?"
+"Nepal","Asia",28563377,65.46,12640000000,202240000
+"Netherlands","Europe",16715999,79.4,909500000000,14552000000
+"Netherlands Antilles","Central/South America",227049,76.65,"?","?"
+"New Caledonia","Other",227436,74.98,3300000000,"?"
+"New Zealand","Other",4213418,80.36,135700000000,1357000000
+"Nicaragua","Central/South America",5891199,71.5,6561000000,39366000
+"Niger","Africa",15306252,52.6,5322000000,69186000
+"Nigeria","Africa",149229090,46.94,220300000000,3304500000
+"Niue","Other",1398,"?",10010000,"?"
+"Norfolk Island","Other",2141,"?","?","?"
+"Northern Mariana Islands","Other",88662,76.7,633400000,"?"
+"Norway","Europe",4660539,79.95,481100000000,9140900000
+"Oman","Middle East",3418085,74.16,56320000000,6420480000
+"Pakistan","Asia",176242949,64.49,160900000000,4827000000
+"Palau","Other",20796,71.22,164000000,"?"
+"Panama","Central/South America",3360474,77.25,23420000000,234200000
+"Papua New Guinea","Other",6057263,66.34,6363000000,89082000
+"Paracel Islands","Asia","?","?","?","?"
+"Paraguay","Central/South America",6995655,75.77,16360000000,163600000
+"Peru","Central/South America",29546963,70.74,131400000000,1971000000
+"Philippines","Asia",97976603,71.09,168600000000,1517400000
+"Pitcairn Islands","Other",48,"?","?","?"
+"Poland","Europe",38482919,75.63,567400000000,9702540000
+"Portugal","Europe",10707924,78.21,255500000000,5876500000
+"Puerto Rico","Central/South America",3971020,78.53,88000000000,"?"
+"Qatar","Middle East",833285,75.35,116900000000,11690000000
+"Romania","Europe",22215421,72.45,213900000000,4064100000
+"Russia","Europe",140041247,66.03,1757000000000,68523000000
+"Rwanda","Africa",10473282,50.52,4027000000,116783000
+"Saint Barthelemy","Central/South America",7448,"?","?","?"
+"Saint Helena","Africa",7637,78.44,"?","?"
+"Saint Kitts and Nevis","Central/South America",40131,73.2,559000000,"?"
+"Saint Lucia","Central/South America",160267,76.45,1031000000,"?"
+"Saint Martin","Central/South America",29820,"?","?","?"
+"Saint Pierre and Miquelon","North America",7051,79.07,"?","?"
+"Saint Vincent and the Grenadines","Central/South America",104574,73.65,597000000,"?"
+"Samoa","Other",219998,71.86,537000000,"?"
+"San Marino","Europe",30324,81.97,850000000,"?"
+"Sao Tome and Principe","Africa",212679,68.32,160000000,1280000
+"Saudi Arabia","Middle East",28686633,76.3,467700000000,46770000000
+"Senegal","Africa",13711597,59,13900000000,194600000
+"Serbia","Europe",7379339,73.9,52180000000,"?"
+"Seychelles","Africa",87476,73.02,779000000,15580000
+"Sierra Leone","Africa",6440053,41.24,1971000000,45333000
+"Singapore","Asia",4657542,81.98,154500000000,7570500000
+"Slovakia","Europe",5463046,75.4,100600000000,1881220000
+"Slovenia","Europe",2005692,76.92,57010000000,969170000
+"Solomon Islands","Other",595613,73.69,460000000,13800000
+"Somalia","Africa",9832017,49.63,2600000000,23400000
+"South Africa","Africa",49052489,48.98,300400000000,5106800000
+"South Georgia and the South Sandwich Islands","Other","?","?","?","?"
+"Spain","Europe",40525002,80.05,1683000000000,20196000000
+"Spratly Islands","Asia","?","?","?","?"
+"Sri Lanka","Asia",21324791,75.14,38000000000,988000000
+"Sudan","Africa",41087825,51.42,62190000000,1865700000
+"Suriname","Central/South America",481267,73.73,2984000000,17904000
+"Svalbard","Other",2116,"?","?","?"
+"Swaziland","Africa",1123913,31.88,2968000000,139496000
+"Sweden","Europe",9059651,80.86,512900000000,7693500000
+"Switzerland","Europe",7604467,80.85,492600000000,4926000000
+"Syria","Middle East",20178485,71.19,44490000000,2624910000
+"Taiwan","Asia",22974347,77.96,401600000000,8835200000
+"Tajikistan","Asia",7349145,65.33,4788000000,186732000
+"Tanzania","Africa",41048532,52.01,20630000000,41260000
+"Thailand","Asia",65905410,73.1,272100000000,4897800000
+"Timor-Leste","Asia",1131612,67.27,489000000,"?"
+"Togo","Africa",6019877,58.69,3009000000,48144000
+"Tokelau","Other",1416,"?","?","?"
+"Tonga","Other",120898,70.73,258000000,2322000
+"Trinidad and Tobago","Central/South America",1229953,70.86,24160000000,72480000
+"Tunisia","Africa",10486339,75.78,41770000000,584780000
+"Turkey","Middle East",76805524,71.96,798900000000,42341700000
+"Turkmenistan","Asia",4884887,67.87,28820000000,979880000
+"Turks and Caicos Islands","Central/South America",22942,75.42,"?","?"
+"Tuvalu","Other",12373,69.29,14940000,"?"
+"Uganda","Africa",32369558,52.72,15040000000,330880000
+"Ukraine","Europe",45700395,68.25,198000000000,2772000000
+"United Arab Emirates","Middle East",4798491,76.11,270000000000,8370000000
+"United Kingdom","Europe",61113205,79.01,2787000000000,66888000000
+"United States","North America",307212123,78.11,14330000000000,581798000000
+"United States Pacific Island Wildlife Refuges","Other","?","?","?","?"
+"Uruguay","Central/South America",3494382,76.35,31300000000,500800000
+"Uzbekistan","Asia",27606007,71.96,26620000000,532400000
+"Vanuatu","Other",218519,63.98,560000000,"?"
+"Venezuela","Central/South America",26814843,73.61,331800000000,3981600000
+"Vietnam","Asia",86967524,71.58,90880000000,2272000000
+"Virgin Islands","Central/South America",109825,79.05,"?","?"
+"Wake Island","Other","?","?","?","?"
+"Wallis and Futuna","Other",15289,78.2,"?","?"
+"West Bank","Middle East",2461267,74.54,6641000000,"?"
+"Western Sahara","Africa",405210,54.32,"?","?"
+"Yemen","Middle East",23822783,63.27,27560000000,1818960000
+"Zambia","Africa",11862740,38.63,15230000000,274140000
+"Zimbabwe","Africa",11392629,45.77,4548000000,172824000
