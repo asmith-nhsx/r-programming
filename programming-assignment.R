@@ -59,21 +59,86 @@ denoise.image <- function(I, d) {
   }
   m <- dim(I)[1]
   n <- dim(I)[2]
-  l <- ((d-1)/2)  
   if (m < d) {
     stop("Input image must be a matrix with more rows than d")
   }
   if (n < d) {
     stop("Input image must be a matrix with more columns than d")
   }
-  img.denoised <- matrix(nrow=m-l,ncol=n-l)
+  img.denoised <- matrix(nrow=m-d-1,ncol=n-d-1)
   for (i in 1:(m-d-1)) {
     for (j in 1:(n-d-1)) {
-      img.denoised[i,j] <- median(I[c(i,i+d-1),c(j,j+m,-1)])
+      img.denoised[i,j] <- median(I[c(i,i+d-1),c(j,j+d-1)])
     }
   }
   return(img.denoised)
 }
 
 image(denoise.image(img, d=5), col=grey(seq(0, 1, len=256)))
+
+
+# Task 3
+
+#' Generate Pascal's triangle
+#' @param n the number of rows of Pascal's triangle to generate
+#' @return a list with n entries representing each row of Pascal's triangle
+pascal <- function(n) {
+  t <- list(c(1))
+  for (k in 2:n) {
+    t[[k]] <- c(0,t[[k-1]])+c(t[[k-1]],0)     
+  }
+  return(t)
+}
+
+# tests
+expected <- list(1,c(1,1),c(1,2,1)) 
+result <- pascal(3)
+identical(expected, result)
+
+expected <- list(1,c(1,1),c(1,2,1),c(1,3,3,1),c(1,4,6,4,1),c(1,5,10,10,5,1)) 
+result <- pascal(6)
+identical(expected, result)
+
+
+# Task 4
+
+#' Produce truncated polynomials
+#' @param x scalar of vector of input values
+#' @param x0 scalar value below which values are truncated
+#' @param r power of polynomial
+#' @return a scalar or vector or truncated polynomials
+tp <- function(x, x0, r) {
+  return(ifelse(x > x0, (x-x0)^r, 0))
+}
+
+# tests
+# scalar case
+expected <- 8
+result <- tp(4,2,3)
+expected == result
+
+#vector case
+expected <- c(4,0,1,9,16,0)
+result <- tp(c(4,1,3,5,6,-1),2,2)
+identical(expected, result)
+
+# Task 5
+
+#' Smooth quadratic spline function
+#' @param x vector of input values
+#' @param delta scalar value below which polynomials are truncated
+#' @return output quadratic spline as a vector
+bspline <- function(x, delta=1) {
+  return(
+    1/(2*delta^2)*(tp(x,0,2)-3*tp(x,delta,2)+3*tp(x,2*delta,2)-tp(x,3*delta,2))
+  )
+}
+
+# test
+x <- seq(-1,4,length.out=250)
+y <- bspline(x)
+plot(y~x,type="l",ylab="B1(x)")
+
+# Task 6
+
 
