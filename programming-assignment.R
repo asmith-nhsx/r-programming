@@ -130,7 +130,7 @@ identical(expected, result)
 #' @return output quadratic spline as a vector
 bspline <- function(x, delta=1) {
   return(
-    1/(2*delta^2)*(tp(x,0,2)-3*tp(x,delta,2)+3*tp(x,2*delta,2)-tp(x,3*delta,2))
+    (1/(2*delta^2))*(tp(x,0,2)-3*tp(x,delta,2)+3*tp(x,2*delta,2)-tp(x,3*delta,2))
   )
 }
 
@@ -141,4 +141,92 @@ plot(y~x,type="l",ylab="B1(x)")
 
 # Task 6
 
+
+#' Create a projection 
+#' @param x vector of input values
+#' @param k integer value for the number of knots to use in the projection
+#' @return projection object containing the calculated projection matrix P 
+projection <- function(x, k) {
+  
+  if (k != floor(k)) {
+    stop("k must be an integer")
+  }
+  n <- length(x)
+  maxx <- max(x)
+  minx <- min(x)
+  delta <- (maxx - minx)/(k-2)
+  # create a sequence of k equally spaced knots
+  t <- seq(minx-2*delta, maxx-delta, length.out=k)
+  
+  # create a n by k matrix Z of smooth quadratic splines
+
+  # expand vector x into a n by k matrix
+  xm <- matrix(replicate(k,x), nrow=n)
+  # expand vector t into a n by k matrix
+  tm <- t(matrix(replicate(n,t), nrow=k))
+  
+  # create Z using the vectorized form of bspline (no for loops)
+  Z <- bspline(xm - tm, delta)
+  
+  # create P projection matrix
+  P <- Z %*% solve(t(Z) %*% Z) %*% t(Z)
+  
+  # construct the projection object and return it
+  result <- list(x=x, delta=delta, Z=Z, P=P)
+  class(result) = "projection"
+  return(result)
+}
+
+# tests
+
+
+# this should throw the error "k must be an integer"
+x <- rnorm(5)
+k <- 3.1897
+tryCatch({
+    projection(x,k) 
+    print(FALSE)
+  },
+  error = function(err) {
+    print(err$message == "k must be an integer")
+  }
+)
+
+# test for right object type returned
+n <- 5
+x <- rnorm(n)
+k <- 3
+p <- projection(x, k)
+class(p) == "projection"
+p$x == x
+p$delta == (max(x) - min(x))/(k-2)
+dim(p$Z) == c(n, k)
+dim(p$P) == c(n, n)
+
+# task 6 - b
+
+#' Plot the projection 
+#' @param proj projection object to plot
+#' @param y response variable to plot 
+plot.projection <- function(proj, y, ...) {
+  # project the response variable into a smooth spline
+  smoothed <- p$P %*% y
+  # pass additional arguments passed to plot using the ellipsis
+  plot(proj$x, y, type="p", ...)
+  # plot the smoothed spline
+  lines(proj$x, smoothed)
+}
+
+# test
+x <- seq(1,10)
+y <- rnorm(10,5,2)
+k <- 6
+p <- projection(x, k)
+plot(p,y)
+
+
+# task 6 - c
+library(MASS)
+p <- projection(mcycle$times, 12)
+plot(p, mcycle$accel, xlab="times", ylab="accel")
 
