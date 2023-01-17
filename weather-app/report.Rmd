@@ -1,0 +1,37 @@
+---
+title: "weather-app-report"
+author: "AGS"
+date: "`r Sys.Date()`"
+output: word_document
+params:
+  weatherStations: 971
+  timeAxis: "calendar_time"
+  aggregation: "daily_average"
+  weatherVariable: "air_temperature" 
+---
+```{r setup, include=FALSE}
+source("R/common.R", local=TRUE)
+```
+
+## Main Weather Plot
+```{r main plot, echo=FALSE, message=FALSE}
+selectedSites <- common.selectedSites(params$weatherStations)
+weatherData <- common.weatherData(selectedSites)
+plot(common.mainPlot(weatherData,
+                     params$timeAxis,
+                     params$aggregation,
+                     params$weatherVariable))
+
+```
+
+## Weather Station Locations
+```{r location plot, echo=FALSE, message=FALSE}
+  maps::map("world","UK")
+  points(sites$Longitude, sites$Latitude, pch=16, col="red")
+  points(selectedSites$Longitude, selectedSites$Latitude, pch=16, col="blue")
+```
+
+## Last 7 Days of Weather Data
+```{r recent data, echo=FALSE, message=FALSE}
+  kable(common.recentData(weatherData, nrow(selectedSites), 7))
+```

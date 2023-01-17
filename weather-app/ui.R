@@ -1,4 +1,3 @@
-library(shiny)
 source("R/common.R", local=TRUE)
 
 # Define UI for application that draws a histogram
@@ -27,7 +26,7 @@ ui <- fluidPage(
                    choices=timeAxes
       ),
       downloadButton("downloadCSV", "Download CSV"),
-      downloadButton("downloadWord", "Download Word Report")      
+      downloadButton("downloadReport", "Download Report")      
     ),
     # Show a plot 
     mainPanel(

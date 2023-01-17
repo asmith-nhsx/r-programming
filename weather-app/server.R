@@ -1,8 +1,4 @@
 
-library(tidyverse)
-library(shiny)
-library(maps)
-library(lubridate)
 source("R/common.R", local=TRUE)
 
 server <- function(input, output, session) {
@@ -34,51 +30,12 @@ server <- function(input, output, session) {
   })
 
   selectedSites <- reactive({
-    sites[sites$Site_ID %in% input$weatherStations,]
+    common.selectedSites(input$weatherStations)
   })
   
   weatherData <- reactive({
-    files <- paste0("data/Site_", selectedSites()$Site_ID, ".csv")
-    do.call(rbind,(lapply(files, read.csv))) %>%
-      # remove data for the non-existent leap day 29 Feb 2022!
-      filter(!startsWith(ob_time, "29/02/2022")) %>% 
-      inner_join(selectedSites(), by=c("Site"="Site_ID"))
+    common.weatherData(selectedSites())
   })
-  
-  weatherVariable.description <- reactive({
-    names(weatherVariables[weatherVariables == input$weatherVariable])[1]
-  })
-
-  timeAxis.description <- reactive({
-    names(timeAxes[timeAxes == input$timeAxis])[1]
-  })
-  
-  aggregation.description <- reactive({
-    names(aggregations[aggregations == input$aggregation])[1]
-  })
-  
-  applyTime <- function(timeAxis, aggregate, sdate) {
-    # convert string date to POSIXct date
-    date <- dmy_hm(sdate)
-    switch(timeAxis,
-           "weekday"=wday(date),
-           "weekhour"=wday(date)*24 + hour(date),
-           "hour"=hour(date),
-           switch(aggregate,
-                  "monthly_average"=month(date),
-                  "calendar_time"=date,
-                  #return the date without a time component
-                  as_date(date)))
-  }
-  
-  applyAggregation <- function(aggregate, value) {
-    switch(aggregate,
-           "daily_average"=mean(value),
-           "monthly_average"=mean(value), # time axis will be grouped by month
-           "daily_max"=max(value),
-           "daily_min"=min(value),
-           value)    
-  }
   
   output$mainPlot <- renderPlot({
 
@@ -88,51 +45,20 @@ server <- function(input, output, session) {
       need(nrow(selectedSites)<=5, "Select 5 or fewer weather stations")
     )
     
-    cat(file=stderr(), "Selected sites:", paste0(selectedSites$Site_Name), "\n")
-    
-    #cat(file=stderr(), "Drawing Main Plot...")
-    plotData <- weatherData() %>%
-      mutate(time=applyTime(input$timeAxis, input$aggregation, ob_time)) %>%
-      group_by(Site, Site_Name, time) %>%
-      summarise(agg_value=applyAggregation(input$aggregation, get(input$weatherVariable)))
-    
-    cat(file=stderr(), "Input:", input$weatherVariable, "\n")
-    
-    #plot(avg_temp~t, data=weatherData, col=Site, type="l")
-    plot <- ggplot(plotData) +
-      aes(x=time, y=agg_value, colour=Site_Name) + 
-      labs(title=paste0(weatherVariable.description(), " ", aggregation.description()), 
-           x=timeAxis.description(),
-           y=weatherVariable.description())
-    
-    if (input$timeAxis == "calendar_time") {
-      plot <- plot + geom_line()
-    } else {
-      plot <- plot + geom_point()     
-    }
-
-    return(plot)
+    common.mainPlot(weatherData(),
+                    input$timeAxis,
+                    input$aggregation,
+                    input$weatherVariable)
   })
   
   output$locationPlot <- renderPlot({
     maps::map("world","UK")
-    selectedSites <- selectedSites()
     points(sites$Longitude, sites$Latitude, pch=16, col="red")
-    points(selectedSites$Longitude, selectedSites$Latitude, pch=16, col="blue")
-  })
-  
-  recentData <- reactive({
-    num_sites <- nrow(selectedSites())
-    weatherData() %>% 
-      mutate(time=dmy_hm(ob_time)) %>%
-      arrange(desc(time)) %>%
-      head(168 * num_sites) %>%
-      group_by(Site, Site_Name, month, day) %>%
-      summarise(across(unname(unlist(weatherVariables)), mean, .names = "mean_{.col}"))    
+    points(selectedSites()$Longitude, selectedSites()$Latitude, pch=16, col="blue")
   })
   
   output$recentData <- renderDataTable({
-    recentData()
+    common.recentData(weatherData(), nrow(selectedSites()), 7)
   })
   
   output$huttonCriteria <- renderDataTable({
@@ -147,5 +73,15 @@ server <- function(input, output, session) {
       write.csv(recentData(), file, row.names=FALSE)
     }
   )
-
+  
+  output$downloadReport <- downloadHandler(
+    filename = "report.docx",
+    content = function(file) {
+      render("report.Rmd", output_format="word_document",
+             output_file=file, params=list(weatherStations=input$weatherStations,
+                                           timeAxis=input$timeAxis,
+                                           aggregation=input$aggregation,
+                                           weatherVariable=input$weatherVariable))
+    }
+  )
 }
