@@ -10,7 +10,9 @@ params:
   weatherVariable: "air_temperature" 
 ---
 ```{r setup, include=FALSE}
+library(knitr)
 source("R/common.R", local=TRUE)
+
 ```
 
 ## Main Weather Plot

@@ -57,8 +57,12 @@ server <- function(input, output, session) {
     points(selectedSites()$Longitude, selectedSites()$Latitude, pch=16, col="blue")
   })
   
-  output$recentData <- renderDataTable({
+  recentData <- reactive({
     common.recentData(weatherData(), nrow(selectedSites()), 7)
+  })
+  
+  output$recentData <- renderDataTable({
+    recentData()
   })
   
   output$huttonCriteria <- renderDataTable({

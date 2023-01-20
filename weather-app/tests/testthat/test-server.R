@@ -1,8 +1,16 @@
+# test the server is working and generating outputs without errors
 testServer(expr = {
-  # Set the `size` slider and check the output
-  session$setInputs(size = 6)
-  expect_equal(output$sequence, "1 2 3 4 5 6")
-
-  session$setInputs(size = 12)
-  expect_equal(output$sequence, "1 10 11 12 2 3 4 5 6 7 8 9")
+  suppressWarnings({
+    session$setInputs(aggregation = "monthly_average", 
+                      timeAxis = "calendar_time",
+                      weatherVariable = "air_temperature",
+                      weatherStations = c(971, 1450, 613, 1090, 315),
+                      huttonSite = 971,
+                      huttonMonth = 1)
+    output$mainPlot
+    output$locationPlot
+    output$recentData
+    output$huttonCriteria
+    succeed("All server outputs generated")    
+  })
 })

@@ -63,12 +63,12 @@ common.applyTime <- function(timeAxis, aggregate, sdate) {
   # convert string date to POSIXct date using lubridate
   date <- dmy_hm(sdate)
   switch(timeAxis,
-         "weekday"=wday(date),
-         "weekhour"=wday(date)*24 + hour(date),
+         "weekday"=wday(date, week_start=1), # 1 day of week is Monday
+         "weekhour"=(wday(date, week_start=1)-1)*24 + hour(date),
          "hour"=hour(date),
          switch(aggregate,
                 "monthly_average"=month(date),
-                "calendar_time"=date,
+                "raw"=date,
                 #return the date without a time component
                 as_date(date)))
 }
@@ -86,6 +86,22 @@ common.applyAggregation <- function(aggregate, value) {
          value)    
 }
 
+#' get the weather data to plot 
+#' @param weatherData base weather data to plot
+#' @param timeAxis choice of time axis
+#' @param aggregation choice of aggregation
+#' @param weatherVariable choice of weather variable
+#' @return data frame of weather data grouped and summarised based on the parameter choices
+common.getPlotData <- function(weatherData, 
+                                timeAxis,
+                                aggregation, 
+                                weatherVariable) {
+  weatherData %>%
+    mutate(time=common.applyTime(timeAxis, aggregation, ob_time)) %>%
+    group_by(Site, Site_Name, time) %>%
+    summarise(agg_value=common.applyAggregation(aggregation, get(weatherVariable)))
+}
+
 #' plot the weather data   
 #' @param weatherData base weather data to plot
 #' @param timeAxis choice of time axis
@@ -98,10 +114,7 @@ common.mainPlot <- function(weatherData,
                             weatherVariable) {
   
   # group and summarise the weather data based on the parameter choices
-  plotData <- weatherData %>%
-    mutate(time=common.applyTime(timeAxis, aggregation, ob_time)) %>%
-    group_by(Site, Site_Name, time) %>%
-    summarise(agg_value=common.applyAggregation(aggregation, get(weatherVariable)))
+  plotData <- common.getPlotData(weatherData, timeAxis, aggregation, weatherVariable)
   
   # fetch descriptions for the selected parameter choices
   timeAxis.description <- common.paramDescription(timeAxes, timeAxis)  
